@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.stories-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.story-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid red;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.story-viewer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.story-viewer img {
+    max-height: 80vh;
+    max-width: 90vw;
+}
+
+.progress-bar {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 90%;
+    height: 5px;
+    background: gray;
+}
+
+.progress {
+    height: 100%;
+    width: 0%;
+    background: white;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: white;
+    padding: 5px 10px;
+    cursor: pointer;
+}
