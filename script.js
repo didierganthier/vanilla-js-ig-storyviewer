@@ -49,5 +49,10 @@ stories.forEach((story, index) => {
 
 const openStory = (index) => {
     currentIndex = index;
-    stor
+    storyImage.src = stories[currentIndex].storyImage;
+    storyViewer.style.visibility = 'visible';
+    storyViewer.style.opacity = 1;
+    startProgress();
 };
+
+const startProgress = () => {};
