@@ -34,7 +34,7 @@ const stories = [
 const storiesContainer = document.getElementById('storiesContainer');
 const storyViewer = document.getElementById('storyViewer');
 const storyImage = document.getElementById('storyImage');
-const progress = document.getElementById('progress');
+const progressBar = document.getElementById('progress');
 const closeBtn = document.getElementById('closeBtn');
 let currentIndex = 0;
 let progressInterval;
@@ -55,4 +55,26 @@ const openStory = (index) => {
     startProgress();
 };
 
-const startProgress = () => {};
+const startProgress = () => {
+    progressBar.style.width = '0%';
+    clearInterval(progressInterval);
+    let progress = 0;
+    progressInterval = setInterval(() => {
+        progress += 2;
+        progressBar.style.width = `${progress}%`;
+        if (progress >= 100) {
+            clearInterval(progressInterval);
+            nextStory();
+        }
+    }, 50);
+};
+
+const nextStory = () => {
+    if (currentIndex < stories.length - 1) {
+        openStory(currentIndex + 1);
+    } else {
+        closeStory();
+    }
+}
+
+const closeStory = () => {};
