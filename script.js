@@ -60,7 +60,7 @@ const startProgress = () => {
     clearInterval(progressInterval);
     let progress = 0;
     progressInterval = setInterval(() => {
-        progress += 2;
+        progress += 1;
         progressBar.style.width = `${progress}%`;
         if (progress >= 100) {
             clearInterval(progressInterval);
@@ -77,4 +77,11 @@ const nextStory = () => {
     }
 }
 
-const closeStory = () => {};
+const closeStory = () => {
+    storyViewer.style.visibility = 'hidden';
+    storyViewer.style.opacity = 0;
+    clearInterval(progressInterval);
+};
+
+closeBtn.addEventListener('click', closeStory);
+storyViewer.addEventListener('click', nextStory);
