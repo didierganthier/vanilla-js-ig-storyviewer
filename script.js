@@ -25,3 +25,11 @@ const stories = [
         user: 'user5'
     }
 ];
+
+const storiesContainer = document.getElementById('storiesContainer');
+const storyViewer = document.getElementById('storyViewer');
+const storyImage = document.getElementById('storyImage');
+const progress = document.getElementById('progress');
+const closeBtn = document.getElementById('closeBtn');
+let currentIndex = 0;
+let progressInterval;
